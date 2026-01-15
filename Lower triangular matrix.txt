@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main(){
+	int m,n,i,j;
+	int arr[10][10];
+	int isLower=1;
+	printf("Enter no of rows, columns: ");
+		scanf("%d %d",&m,&n);
+	printf("Enter elements of matrix:");
+	for(i=0;i<m;i++){
+		for(j=0;j<n;j++){
+			scanf("%d",&arr[i][j]);
+			}
+		}
+	if(m != n){
+		printf("Matrix must be square matrix\n");
+			return 0;
+	}
+	for(i=0;i<m;i++){
+		for(j=i+1;j<n;j++){
+			if(arr[i][j] != 0){
+				isLower = 0;
+			}
+		}
+	}
+		if(isLower) printf("Lower triangular matrix\n");
+		
+		else printf("Not a lower triangular matrix\n"); 
+	return 0;
+		
+}
+
+

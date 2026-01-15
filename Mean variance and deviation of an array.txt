@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int n,i;
+	double arr[100];
+	double sum = 0,mean,variance,stddev,sumsq=0;
+	printf("Enter the number of values: ");
+	scanf("%d",&n);
+	printf("Enter values : ");
+	for(int i=0;i<n;i++){
+		scanf("%lf",&arr[i]);
+		sum = sum+arr[i];
+	}
+	mean= sum/n;
+	for(int i=0;i<n;i++){
+		sumsq= sumsq+pow(arr[i]-mean,2);
+	}
+	variance=sumsq/n;
+	stddev=sqrt(variance);
+	printf("Mean = %.2lf\n",mean);
+	printf("Variance = %.2lf\n",variance);
+	printf("Deviation = %.2lf\n",stddev);
+	return 0;
+	
+}
